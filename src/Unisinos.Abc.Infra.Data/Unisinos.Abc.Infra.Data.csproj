@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Unisinos.Abc.Domain\Unisinos.Abc.Domain.csproj" />
+    <ProjectReference Include="..\Unisinos.Abc.Infra.Dto\Unisinos.Abc.Infra.Dto.csproj" />
+    <ProjectReference Include="..\Unisinos.Abc.Infra\Unisinos.Abc.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

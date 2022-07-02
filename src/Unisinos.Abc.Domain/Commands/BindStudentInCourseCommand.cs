@@ -1,15 +1,14 @@
 using FluentValidation;
-using FluentValidation.Results;
 using MediatR;
 
 namespace Unisinos.Abc.Domain.Commands
 {
     public class BindStudentInCourseCommand : BaseCommand<BindStudentInCourseCommand>, IRequest<ResponseCommand>
     {
-        public Guid IdStudent { get; private set; }
-        public Guid IdCourse { get; private set; }
+        public Nullable<Guid> IdStudent { get; private set; }
+        public Nullable<Guid> IdCourse { get; private set; }
 
-        public BindStudentInCourseCommand(Guid idStudent, Guid idCourse)
+        public BindStudentInCourseCommand(Nullable<Guid> idStudent, Nullable<Guid> idCourse)
         {
             IdStudent = idStudent;
             IdCourse = idCourse;
@@ -20,7 +19,7 @@ namespace Unisinos.Abc.Domain.Commands
         public void Validate()
         {
             RuleFor(student => student.IdStudent).NotEmpty().WithMessage("O id do estudante é obrigatório");
-            RuleFor(student => student.IdStudent).NotEmpty().WithMessage("O id do curso é obrigatório");
+            RuleFor(student => student.IdCourse).NotEmpty().WithMessage("O id do curso é obrigatório");
 
             this.ValidationResult = this.Validate(this);
         }

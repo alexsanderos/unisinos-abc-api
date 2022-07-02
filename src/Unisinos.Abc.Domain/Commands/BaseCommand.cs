@@ -5,7 +5,8 @@ namespace Unisinos.Abc.Domain.Commands
 {
     public abstract class BaseCommand<T> : AbstractValidator<T>
     {
-        public ValidationResult ValidationResult;
+        protected ValidationResult ValidationResult;
+
         public bool IsValid()
         {
             return this.ValidationResult.IsValid;

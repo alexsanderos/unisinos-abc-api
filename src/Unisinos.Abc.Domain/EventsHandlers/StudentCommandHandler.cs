@@ -62,8 +62,8 @@ namespace Unisinos.Abc.Domain.EventsHandlers
                 return ResponseError<BindStudentInCourseCommand>(request);
             }
 
-            var student = _studentRepository.GetStudent(request.IdStudent);
-            var course = _studentRepository.GetCourse(request.IdCourse);
+            var student = _studentRepository.GetStudent(request.IdStudent.GetValueOrDefault());
+            var course = _studentRepository.GetCourse(request.IdCourse.GetValueOrDefault());
 
             if (student == null)
             {
